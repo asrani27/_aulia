@@ -36,6 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
+                @if (Auth::user()->roles == 'superadmin')
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="/superadmin" class="nav-link  {{request()->is('superadmin') ? 'active2':''}}">Dashboard</a>
                 </li>
@@ -55,6 +56,7 @@
                     <a href="/superadmin/evaluasi"
                         class="nav-link  {{request()->is('superadmin/evaluasi*') ? 'active2':''}}">Evaluasi</a>
                 </li>
+                @endif
             </ul>
 
             <!-- Right navbar links -->
@@ -148,19 +150,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/user/ajukan" class="nav-link {{request()->is('user/ajukan*') ? 'active':''}}">
-                                <i class="nav-icon fas fa-edit"></i>
+                            <a href="/user/klien" class="nav-link {{request()->is('user/klien*') ? 'active':''}}">
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Ajukan Penerima BanSos
+                                    Data Klien
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/user/pengaduan"
-                                class="nav-link {{request()->is('user/pengaduan*') ? 'active':''}}">
-                                <i class="nav-icon fas fa-comment"></i>
+                            <a href="/user/dokumen" class="nav-link {{request()->is('user/dokumen*') ? 'active':''}}">
+                                <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Pengaduan
+                                    Dokumen Klien
                                 </p>
                             </a>
                         </li>

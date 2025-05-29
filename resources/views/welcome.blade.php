@@ -55,6 +55,7 @@
                         <!-- /.col -->
                         <div class="col-12">
                             <button type="submit" class="btn btn-success btn-block">Log In</button>
+                            <a href="/daftar" class="btn btn-danger btn-block">Daftar</a>
                         </div>
                         <!-- /.col -->
                     </div>

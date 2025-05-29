@@ -39,19 +39,19 @@ Route::post('/daftar', [DaftarController::class, 'store']);
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'dashboard']);
 
-    Route::get('/user/ajukan', [UserController::class, 'ajukan']);
-    Route::get('/user/ajukan/add', [UserController::class, 'add_ajukan']);
-    Route::post('/user/ajukan/add', [UserController::class, 'store_ajukan']);
-    Route::get('/user/ajukan/edit/{id}', [UserController::class, 'edit_ajukan']);
-    Route::post('/user/ajukan/edit/{id}', [UserController::class, 'update_ajukan']);
-    Route::get('/user/ajukan/delete/{id}', [UserController::class, 'delete_ajukan']);
+    Route::get('/user/dokumen', [UserController::class, 'dokumen']);
+    Route::get('/user/dokumen/add', [UserController::class, 'add_dokumen']);
+    Route::post('/user/dokumen/add', [UserController::class, 'store_dokumen']);
+    Route::get('/user/dokumen/edit/{id}', [UserController::class, 'edit_dokumen']);
+    Route::post('/user/dokumen/edit/{id}', [UserController::class, 'update_dokumen']);
+    Route::get('/user/dokumen/delete/{id}', [UserController::class, 'delete_dokumen']);
 
-    Route::get('/user/pengaduan', [UserController::class, 'pengaduan']);
-    Route::get('/user/pengaduan/add', [UserController::class, 'add_pengaduan']);
-    Route::post('/user/pengaduan/add', [UserController::class, 'store_pengaduan']);
-    Route::get('/user/pengaduan/edit/{id}', [UserController::class, 'edit_pengaduan']);
-    Route::post('/user/pengaduan/edit/{id}', [UserController::class, 'update_pengaduan']);
-    Route::get('/user/pengaduan/delete/{id}', [UserController::class, 'delete_pengaduan']);
+    Route::get('/user/klien', [UserController::class, 'klien_index']);
+    Route::get('/user/klien/add', [UserController::class, 'klien_add']);
+    Route::post('/user/klien/add', [UserController::class, 'klien_store']);
+    Route::get('/user/klien/edit/{id}', [UserController::class, 'klien_edit']);
+    Route::post('/user/klien/edit/{id}', [UserController::class, 'klien_update']);
+    Route::get('/user/klien/delete/{id}', [UserController::class, 'klien_delete']);
 });
 
 Route::middleware(['auth', 'superadmin'])->group(function () {
