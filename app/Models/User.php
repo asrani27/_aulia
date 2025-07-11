@@ -43,8 +43,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function skpd()
-    {
-        return $this->hasOne(Skpd::class);
-    }
 }

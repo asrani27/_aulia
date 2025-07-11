@@ -23,6 +23,8 @@
                             <th>Tanggal Masuk</th>
                             <th>Nama Klien</th>
                             <th>Url Dokumen</th>
+                            <th>Keterangan</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -36,6 +38,17 @@
                             <td>{{$item->tanggal}}</td>
                             <td>{{$item->klien == null ? null : $item->klien->nama}}</td>
                             <td>{{$item->url}}</td>
+                            <td>{{$item->verifikasi->first() == null ? null : $item->verifikasi->first()->keterangan}}
+                            </td>
+                            <td>
+                                @if ($item->verifikasi->first() != null)
+                                @if ($item->verifikasi->first()->status == 'VALID')
+                                <span class="badge badge-success">VALID</span>
+                                @else
+                                <span class="badge badge-danger">TIDAK VALID</span>
+                                @endif
+                                @endif
+                            </td>
                             <td class="text-right">
 
                                 <a href="/user/dokumen/edit/{{$item->id}}" class="btn btn-sm btn-success"><i

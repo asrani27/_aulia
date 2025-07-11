@@ -12,4 +12,8 @@ class Dokumen extends Model
     {
         return $this->belongsTo(Klien::class);
     }
+    public function verifikasi()
+    {
+        return $this->hasMany(Verifikasi::class);
+    }
 }
